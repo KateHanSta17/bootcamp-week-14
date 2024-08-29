@@ -9,6 +9,8 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // TODO: Describe what the following two lines of code are doing.
+// app.engine is setting up the handlebars engine for the app to use.
+// app.set is setting the view engine to handlebars so that the app knows to use handlebars for rendering views.
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
