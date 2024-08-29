@@ -42,5 +42,8 @@ router.get('/', async (req, res) => {
 });
 
 // TODO: Add a route called `/dish/:num` below
-
+// ? Get a single dish by its index in the `dishes` array and render the `single` view  with the dish data.
+router.get('/dish/:num', async (req, res) => {
+  res.render('dish', dishes[req.params.num - 1])
+});
 module.exports = router;
