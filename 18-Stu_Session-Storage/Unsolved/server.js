@@ -17,14 +17,19 @@ const PORT = process.env.PORT || 3001;
 const sess = {
   secret: 'Super secret secret',
   // TODO: Add a comment describing the purpose of adding a cookies object to our options to our session object
+  // The cookies object is used to configure the session ID cookie that is sent to the client when a session is created.
   cookie: {
     // TODO: Add a comment describing the functionality of the maxAge attribute
+    // The maxAge attribute is used to set the maximum age of the session ID cookie in milliseconds. In this case, the cookie will expire after 1 hour.
     maxAge: 60 * 60 * 1000,
     // TODO: Add a comment describing the functionality of the httpOnly attribute
+    // The httpOnly attribute is used to prevent client-side JavaScript from accessing the session ID cookie. This helps prevent cross-site scripting (XSS) attacks. 
     httpOnly: true,
     // TODO: Add a comment describing the functionality of the secure attribute
+    // The secure attribute is used to ensure that the session ID cookie is only sent over HTTPS. This helps protect the session ID cookie from being intercepted by attackers.
     secure: false,
     // TODO: Add a comment describing the functionality of the sameSite attribute
+    // The sameSite attribute is used to prevent the session ID cookie from being sent in cross-site requests. This helps prevent cross-site request forgery (CSRF) attacks.
     sameSite: 'strict',
   },
   resave: false,
