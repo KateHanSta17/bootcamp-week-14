@@ -1,6 +1,6 @@
 const loginFormHandler = async (event) => {
   // TODO: Add a comment describing the functionality of this statement
-  // Prevent the default behavior of the form submission. 
+  // Prevent the default behavior of the form submission. So we can do it via javascript.
   event.preventDefault();
 
   // TODO: Add a comment describing the functionality of these expressions
@@ -11,6 +11,7 @@ const loginFormHandler = async (event) => {
   if (email && password) {
     // TODO: Add a comment describing the functionality of this expression
     // Send a POST request to the login route with the email and password values. If the response is ok, redirect the user to the homepage.
+    // If the response is not ok, alert the user that the login failed.
     const response = await fetch('/api/users/login', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
